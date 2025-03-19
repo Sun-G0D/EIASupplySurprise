@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>template</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -16297,16 +16297,16 @@ After standardization, the 'Release_Datetime' column in <code>icom_eia_forecasts
 <h3 id="Research-Question-1.-How-might-one-characterize-the-effect-that-the-EIA-WPSR-release-have-on-the-Crude-Oil-Futures-Market?-Is-it-statistically-significant-and-over-what-time-interval-is-this-effect-the-strongest?">Research Question 1. How might one characterize the effect that the EIA WPSR release have on the Crude Oil Futures Market? Is it statistically significant and over what time interval is this effect the strongest?<a class="anchor-link" href="#Research-Question-1.-How-might-one-characterize-the-effect-that-the-EIA-WPSR-release-have-on-the-Crude-Oil-Futures-Market?-Is-it-statistically-significant-and-over-what-time-interval-is-this-effect-the-strongest?">&#182;</a></h3><p>Our first research question sought to understand how the EIA WPSR release affects the Crude Oil Futures Market, specifically addressing its statistical significance and the duration of its strongest impact.  We definitively conclude that the WPSR release has a significant impact on the market, supported by two key findings:</p>
 <p><strong>Finding #1: Trading Volume Dynamics Around WPSR Release</strong></p>
 <p>We observed a distinct pattern in trading volume in the minutes surrounding the WPSR release. As illustrated</p>
-<iframe src="plots/fig_volume_scatter_release.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>trading volume steadily decreases in the approximately 30 minutes leading up to the release.  However, precisely at the moment of the WPSR release, there is a sharp and substantial jump in trading volume.</p>
+<iframe src="fig_volume_scatter_release.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>trading volume steadily decreases in the approximately 30 minutes leading up to the release.  However, precisely at the moment of the WPSR release, there is a sharp and substantial jump in trading volume.</p>
 <p>This behavior suggests that traders become hesitant to engage in trading activity as the report release approaches, anticipating potential price volatility. Upon the report's release, the market rapidly absorbs the information, leading to a surge in trading activity as participants react to the news and attempt to capitalize on the anticipated price adjustments. This volume spike is a clear indicator of the WPSR's immediate market impact.</p>
 <p><strong>Finding #2: Statistically Significant Change in Minute-to-Minute Price Behavior Post-Release</strong></p>
 <p>Beyond volume, we examined the minute-to-minute price behavior before and after WPSR releases to look for any statistically significant changes.</p>
-<iframe src="plots/fig_heatmap_release.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><iframe src="plots/fig_heatmap_non_release.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+<iframe src="fig_heatmap_release.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><iframe src="fig_heatmap_non_release.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 As seen in the two heatmaps, it's pretty apparent that price fluctuations are noticeably more frequent and potentially larger in magnitude immediately following a WPSR release compared to days without a release.
 
 To quantify this observation, we conducted a two-sample Kolmogorov-Smirnov (KS) test on the distributions of minute-to-minute price changes after WPSR releases, comparing them to "normal" price change distributions (days without releases).
 
-<img src="plots/line_plot_p_vaue_KS_test.png" alt="ks_test line plot failed to load"> 
+<img src="line_plot_p_vaue_KS_test.png" alt="ks_test line plot failed to load"> 
 
 As seen in the line plot, the p-value remains below our chosen significance threshold of 0.1 for the first three minutes after the report release.  This indicates that the price change distributions in these minutes are statistically significantly different from normal price behavior.
 
@@ -16330,31 +16330,31 @@ The second interpretation goes even further and assumes that traders consider th
 To investigate these interpretations, we explored the relationship between supply-demand imbalances (as defined by both interpretations) and subsequent price movements through visual inspection.  
 
 
-<iframe src="plots/fig_scatter_surprise_vs_pricechange_EIA.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><iframe src="plots/fig_scatter_surprise_vs_pricechange_Investingcom.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><iframe src="plots/fig_scatter_surprise_vs_pricechange_api.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Our analysis revealed that the relationships between these hypothesized supply-demand imbalance metrics and price movements are considerably obscured by noise. Even after coloring dots based on how recent the event was, the expected linear correlation was still not very strongly evident in the data.  While visually inspecting the scatter plots, we observed slightly less noise associated with Interpretation #1 (raw supply change) compared to Interpretation #2 (supply surprise). Thus, we decided to go with Interpretation #1 for further analysis, acknowledging the inherent noise and potential non-linearity in the relationship.</p>
+<iframe src="fig_scatter_surprise_vs_pricechange_EIA.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><iframe src="fig_scatter_surprise_vs_pricechange_Investingcom.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><iframe src="fig_scatter_surprise_vs_pricechange_api.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Our analysis revealed that the relationships between these hypothesized supply-demand imbalance metrics and price movements are considerably obscured by noise. Even after coloring dots based on how recent the event was, the expected linear correlation was still not very strongly evident in the data.  While visually inspecting the scatter plots, we observed slightly less noise associated with Interpretation #1 (raw supply change) compared to Interpretation #2 (supply surprise). Thus, we decided to go with Interpretation #1 for further analysis, acknowledging the inherent noise and potential non-linearity in the relationship.</p>
 <h3 id="Research-Question-3.-Given-the-noise-and-possible-non-linearity-found-in-the-relationship-between-the-WPSR-supply-change-information-and-the-crude-oil-futures-price-movement,-how-can-we-use-machine-learning-techniques-to-model-this-relationship-and-predict-the-price-behavior-based-on-the-information-found-in-the-WPSR?">Research Question 3. Given the noise and possible non-linearity found in the relationship between the WPSR supply change information and the crude oil futures price movement, how can we use machine learning techniques to model this relationship and predict the price behavior based on the information found in the WPSR?<a class="anchor-link" href="#Research-Question-3.-Given-the-noise-and-possible-non-linearity-found-in-the-relationship-between-the-WPSR-supply-change-information-and-the-crude-oil-futures-price-movement,-how-can-we-use-machine-learning-techniques-to-model-this-relationship-and-predict-the-price-behavior-based-on-the-information-found-in-the-WPSR?">&#182;</a></h3><p>Given the observed noise and the possibility of non-linear relationships between WPSR supply change information and crude oil futures price movements, our third research question is geared towards exploring the possiblity that machine learning techniques can be used to model and potentially predict price behavior based on WPSR data.</p>
 <p>We compared a total of 5 different machine learning models against a baseline of using the mean. These models included:</p>
 <ul>
 <li><strong>Kernel Regression (Gaussian Kernel)</strong></li>
 </ul>
-<p><img src="plots/kernel_reg_plot.png" alt="kernel regression plot failed to load"></p>
+<p><img src="kernel_reg_plot.png" alt="kernel regression plot failed to load"></p>
 <ul>
 <li><strong>LOESS Regression</strong> (Locally Estimated Scatterplot Smoothing)</li>
 </ul>
-<p><img src="plots/loess.png" alt="kernel regression plot failed to load"></p>
+<p><img src="loess.png" alt="kernel regression plot failed to load"></p>
 <ul>
 <li><strong>Random Forest Regression</strong></li>
 </ul>
-<p><img src="plots/rf_feature_fig.png" alt="random forest feature importance plot failed to load"></p>
-<p><img src="plots/rf_actual_pred_fig.png" alt="random forest prediction plot failed to load"></p>
+<p><img src="rf_feature_fig.png" alt="random forest feature importance plot failed to load"></p>
+<p><img src="rf_actual_pred_fig.png" alt="random forest prediction plot failed to load"></p>
 <ul>
 <li><strong>Random Forest Regression with Gradient Boosting (XGBoost)</strong></li>
 </ul>
-<p><img src="plots/xgb_feature_fig.png" alt="random forest feature importance plot failed to load"></p>
-<p><img src="plots/xgb_actual_pred_fig.png" alt="random forest prediction plot failed to load"></p>
+<p><img src="xgb_feature_fig.png" alt="random forest feature importance plot failed to load"></p>
+<p><img src="xgb_actual_pred_fig.png" alt="random forest prediction plot failed to load"></p>
 <ul>
 <li><strong>Ridge Regression (Regularized Linear Regression) VS Baseline Mean</strong> </li>
 </ul>
-<p><img src="plots/prediction_plot_ridge_reg.png" alt="ridge regression prediction plot failed to load"></p>
+<p><img src="prediction_plot_ridge_reg.png" alt="ridge regression prediction plot failed to load"></p>
 <p>Unfortunately, despite testing these diverse models and tuning hyperparameters using GridSearchCV, we were unable to develop any models with significant predictive accuracy.  Our best performing model was a Random Forest Regressor, which achieved an R-squared value of only 0.0171 and a Mean Squared Error of 0.0290 on the test set.  The incredibly low R-squared value indicates that our model is barely better than the mean at predicting the price change accurately. Additionally, while the MSE seems low, it is still relatively high considering the scale of the price changes.</p>
 \begin{array}{|l|c|c|}
 \hline
